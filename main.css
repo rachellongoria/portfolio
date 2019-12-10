@@ -151,7 +151,7 @@ em {
 .portfolio-piece h2 {
 	color: var(--color-gray-medium);
 	font-size: var(--font-size-two-up);
-	margin: 0 0 var(--margin-one-up);
+	margin: 0 0 5rem;
 	text-align: center;
 }
 
@@ -581,7 +581,7 @@ figure {
 	figure {
 		margin: 0;
 	}
-	
+
 	.portfolio-grid {
 		display: grid;
 		grid-column-gap: .5rem;
@@ -597,6 +597,17 @@ figure {
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: 1fr 1fr 1fr 1fr;
 	}
+}
+
+/*========================================================================
+======================
+	PORTFOLIO PIECE
+======================
+========================================================================*/
+
+.portfolio-piece img {
+	max-height: auto;
+	max-width: 100%;
 }
 
 /*========================================================================
