@@ -293,6 +293,7 @@ header ul {
 }
 
 .portfolio-header .logo {
+	align-items: flex-start;
 	display: flex;
 	justify-content: center;
 }
@@ -325,11 +326,12 @@ header ul {
 	}
 
 	.logo {
-	display: flex;
-	justify-content: center;
+	display: block;
 	}
 
 	.logo img {
+		display: block;
+		margin: 0 auto;
 		max-width: 15%;
 		max-height: auto;
 		padding-top: 1.5rem;
@@ -426,6 +428,7 @@ main {
 ========================================================================*/
 
 .about-page {
+	align-items: flex-start;
 	display: flex;
 	flex-direction: column;
 }
@@ -608,6 +611,36 @@ figure {
 .portfolio-piece img {
 	max-height: auto;
 	max-width: 100%;
+}
+
+.portfolio-artifact2, .portfolio-artifact3 {
+	display: flex;
+	flex-direction: column;
+
+}
+
+.portfolio-artifact2 img, .portfolio-artifact3 img {
+	margin: 1rem;
+	max-height: auto;
+	max-width: 100%;
+}
+
+@media ( min-width: 650px ) {
+
+	.portfolio-artifact2, .portfolio-artifact3 {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	}
+
+.portfolio-artifact2 img {
+	max-width: 50%;
+	}
+
+.portfolio-artifact3 img {
+	max-width: 33%;
+	}
+
 }
 
 /*========================================================================
