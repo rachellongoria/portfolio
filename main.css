@@ -382,6 +382,10 @@ main {
 	margin: var(--margin-standard) auto 7rem;
 }
 
+.hero p {
+	padding: 0 2rem;
+}
+
 .hero h1, .hero p, .hero button {
 	animation: fade-in 2.5s ease;
 }
