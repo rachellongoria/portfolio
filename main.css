@@ -7,7 +7,7 @@
 html {
 
 	--color-gray-light: #fafafa;
-	--color-gray-medium: #999;
+	--color-gray-medium: #888;
 	--color-gray-dark: #575757;
 	--color-accent: #a6462b;
 	--color-disabled: #dedede;
@@ -70,11 +70,9 @@ a:disabled {
 	color: var(--color-disabled);
 	cursor: default;
 }
-}
 
 nav a {
-	color: var(--color-gray-dark);
-	font-size: var(--font-size-two-down);
+	color: var(--color-gray-medium);
 	text-decoration: none;
 }
 
@@ -141,14 +139,14 @@ em {
 	font-size: var(--font-size-one-up);
 }
 
-.portfolio-piece h1 {
+.portfolio-piece .primary-title h1 {
 	letter-spacing: .03em;
-	margin-bottom: 0;
+	padding-right: 0;
 	text-align: center;
 	text-transform: uppercase;
 }
 
-.portfolio-piece h2 {
+.portfolio-piece .primary-title p {
 	color: var(--color-gray-medium);
 	font-size: var(--font-size-two-up);
 	margin: 0 0 5rem;
@@ -157,37 +155,28 @@ em {
 
 .portfolio-piece h3 {
 	letter-spacing: .03em;
-	margin-bottom: .5rem;
+	margin: var(--margin-two-up) 0 .5rem;
 	text-transform: uppercase;
 }
 
 .portfolio-piece h4 {
-	margin-top: 0;
+	margin: var(--margin-two-up) 0 .5rem;
 }
+
+.portfolio-piece .secondary-title h4 {
+	margin-top: .5rem;
+}
+
+.portfolio-piece h4 {
+	margin: var(--margin-two-up) 0 .5rem;}
 
 .main-resume a {
 	text-transform: none;
 }
 
-.main-resume h3 {
-	font-size: var(--font-size-one-down);
-}
-
-.resume-skills {
-	text-align: center;
-}
-
-.resume-skills h4 {
-	text-align: left;
-}
-
-.resume-skills h5 {
-	margin-bottom: 0;
-
-}
-
-.resume-skills p {
-	margin-top: 0;
+.primary-title p {n9k
+	font-size: var(--font-size-one-up);
+	font-weight: 800;
 }
 
 .resume-contact a {
@@ -256,8 +245,8 @@ form label {
 
 @media ( min-width: 650px ) {
 
-	.main-resume h3 {
-		font-size: var(--font-size-one-up);
+	.primary-title p {
+		font-size: var(--font-size-three-up);
 	}
 }
 
@@ -301,15 +290,21 @@ header ul {
 .portfolio-header .logo img {
 	max-width: 15%;
 	max-height: auto;
-	padding-top: 1.5rem;
+	padding-top: 1rem;
 }
 
 .portfolio-header nav {
-	padding: 2rem;
+	padding: 1rem;
 	text-align: center;
 }
 
-.portfolio-header nav a {
+.portfolio-header p {
+	margin-top: 0;
+}
+
+.portfolio-second-nav {
+	text-align: center;
+	margin-bottom: var(--margin-one-up);
 }
 
 @media ( min-width: 650px) {
@@ -407,17 +402,17 @@ main {
 
 @media ( min-width: 900px ) {
 
-.hero {
-	background-image: url(images/hero.jpeg);
-	justify-content: center;
-	padding-left: 7rem;
-	text-align: left;
+	.hero {
+		background-image: url(images/hero.jpeg);
+		justify-content: center;
+		padding-left: 7rem;
+		text-align: left;
 
-}
+	}
 
-.hero .button {
-	margin: var(--margin-standard) 0;
-}
+	.hero .button {
+		margin: var(--margin-standard) 0;
+	}
 
 }
 
@@ -511,18 +506,30 @@ main {
 	border-bottom: solid 1px var(--color-gray-medium);
 	margin: var(--margin-two-up) 0 0;
 }
-.resume-name h1 {
+
+.primary-title  h1 {
 	margin-bottom: 0;
 	padding-right: 1rem;
 }
 
-.main-resume h3 {
-	margin: 0 0 var(--margin-two-up) 0;
+details {
+	border-bottom: 1px solid var(--color-gray-dark);
+	padding: .5rem;
+}
+
+summary {
+	padding: .5rem;
+}
+
+summary:focus {
+	border-bottom: .5rem;
+	color: var(--color-accent);
+	outline: none;
 }
 
 @media ( min-width: 650px ) {
 
-	.resume-name {
+	.primary-title-name {
 	align-items: baseline;
 	display: flex;
 	}
@@ -590,15 +597,12 @@ figure {
 		grid-column-gap: .5rem;
 		grid-row-gap: 2rem;
 		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 	}
 }
 
 @media ( min-width: 800px) {
 	.portfolio-grid {
-		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 1fr 1fr 1fr 1fr;
 	}
 }
 
@@ -609,6 +613,8 @@ figure {
 ========================================================================*/
 
 .portfolio-piece img {
+	display: block;
+	margin: 0 auto;
 	max-height: auto;
 	max-width: 100%;
 }
@@ -625,6 +631,15 @@ figure {
 	max-width: 100%;
 }
 
+.ecobag-results {
+		border: .5px solid var(--color-gray-medium);
+		box-shadow: 1px 1px 5px rgba(0,0,0,.2);
+		letter-spacing: .2em;
+		padding: .5rem;
+		text-align: center;
+		text-transform: uppercase;
+}
+
 @media ( min-width: 650px ) {
 
 	.portfolio-artifact2, .portfolio-artifact3 {
@@ -633,14 +648,15 @@ figure {
 	justify-content: center;
 	}
 
-.portfolio-artifact2 img {
-	max-width: 50%;
-	}
+	.portfolio-artifact2 img {
+		max-width: 50%;
+		}
 
-.portfolio-artifact3 img {
-	max-width: 33%;
-	}
+	.portfolio-artifact3 img {
+		max-width: 33%;
+		}
 
+	}
 }
 
 /*========================================================================
@@ -654,7 +670,7 @@ figure {
 	padding: 0 3rem;
 }
 
-.contact-gridcard1, .contact-gridcard2, .contact-gridcard3 {
+.contact-gridcard {
 	margin-bottom: 1rem;
 }
 
@@ -696,7 +712,7 @@ label {
 		padding: 3rem 0;
 	}
 
-	.form-name {
+	.field-pair {
 		display : flex;
 		justify-content: space-between;
 	}
