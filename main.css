@@ -379,7 +379,7 @@ main {
 }
 
 .hero .button {
-	margin: var(--margin-standard) auto 7rem;
+	margin: var(--margin-standard) auto 15rem;
 }
 
 .hero p {
@@ -412,6 +412,10 @@ main {
 		padding-left: 7rem;
 		text-align: left;
 
+	}
+
+	.hero p {
+		padding: 0;
 	}
 
 	.hero .button {
