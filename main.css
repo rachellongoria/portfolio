@@ -27,6 +27,8 @@ html {
 	--font-primary: 'Montserrat', sans-serif;
 
 	--font-size-ratio: 1.1;
+	--font-size-five-up: calc( var(--font-size-four-up) * var(--font-size-ratio) );
+	--font-size-four-up: calc( var(--font-size-three-up) * var(--font-size-ratio) );
 	--font-size-three-up: calc( var(--font-size-two-up) * var(--font-size-ratio) );
 	--font-size-two-up: calc( var(--font-size-one-up) * var(--font-size-ratio) );
 	--font-size-one-up: calc( 1rem * var(--font-size-ratio) );
@@ -76,13 +78,22 @@ nav a {
 	text-decoration: none;
 }
 
-header ul {
-	text-align: center;
+.nav-logo {
+	color: var(--color-accent);
+	font-size: var(--font-size-five-up);
+}
+
+.nav-logo:hover {
+	font-weight: 600;
 }
 
 .current-link {
 	color: var(--color-accent);
 	text-decoration: underline;
+}
+
+nav {
+	text-align: center;
 }
 
 h1 {
@@ -126,17 +137,20 @@ em {
 	color: var(--color-gray-medium);
 }
 
-.hero {
-	color: white;
-}
-
 .hero h1 {
-	color: white;
-	margin-bottom: 0;
+	color: var(--color-gray-medium);
+	letter-spacing: .04em;
+	text-align: center;
 }
 
-.hero p {
-	font-size: var(--font-size-one-up);
+.about-page h2 {
+	color: var(--color-accent);
+	font-size: var(--font-size-five-up);
+	font-weight: 400;
+}
+
+.about-page p {
+	font-size: var(--font-size-two-up);
 }
 
 .portfolio-piece .primary-title h1 {
@@ -257,6 +271,13 @@ form label {
 	}
 }
 
+@media ( min-width: 745px ) {
+
+	.hero h1 {
+		text-align: left;
+	}
+}
+
 footer a {
 	text-decoration: none;
 }
@@ -269,70 +290,41 @@ footer a {
 
 header {
 	background-color: var(--color-gray-light);
+	margin-bottom: 8rem;
+	padding: 2rem 2rem;
 }
 
-header ul {
+nav {
+	margin: 0 auto;
+}
+
+nav li {
 	list-style-type: none;
-	margin: 0;
-	padding: 1rem;
 }
 
-.logo {
-	display: none;
+nav ul {
+	display: block;
+	margin-top: 2rem;
+	padding-left: 0;
 }
 
-.portfolio-header .logo {
-	align-items: flex-start;
-	display: flex;
-	justify-content: center;
-}
+@media ( min-width: 850px) {
 
-.portfolio-header .logo img {
-	max-width: 15%;
-	max-height: auto;
-	padding-top: 1rem;
-}
-
-.portfolio-header nav {
-	padding: 1rem;
-	text-align: center;
-}
-
-.portfolio-header p {
-	margin-top: 0;
-}
-
-.portfolio-second-nav {
-	text-align: center;
-	margin-bottom: var(--margin-one-up);
-}
-
-@media ( min-width: 650px) {
-
-	header ul {
-		margin: 0 auto;
-		max-width: 60rem;
-		padding: 2rem;
+	.nav-logo {
+		padding-left: 1rem;
 	}
 
-	header li {
+	nav {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	nav li {
 		display: inline;
 		padding: 1rem;
 	}
-
-	.logo {
-	display: block;
-	}
-
-	.logo img {
-		display: block;
-		margin: 0 auto;
-		max-width: 15%;
-		max-height: auto;
-		padding-top: 1.5rem;
-	}
 }
-
 
 /*========================================================================
 ============
@@ -358,7 +350,7 @@ html {
 main {
 	margin: 0 auto;
 	max-width: 60rem;
-	padding: 3rem;
+	padding: 0 3rem;
 }
 
 /*========================================================================
@@ -368,28 +360,19 @@ main {
 ========================================================================*/
 
 .hero {
-	background-image: url(images/hero-mobile.jpeg);
-	background-position: center;
-	background-size: cover;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	min-height: 100vh;
-	text-align: center;
+	margin-bottom: 8rem;
 }
 
-.hero .button {
-	margin: var(--margin-standard) auto 15rem;
+.hero h1, .hero img {
+	animation: fade-in 2s ease;
+	padding: 1rem 0;
 }
 
-.hero p {
-	padding: 0 2rem;
+.hero img {
+	border-radius: 3px;
+	max-height: 100%;
+	max-width: 100%;
 }
-
-.hero h1, .hero p, .hero button {
-	animation: fade-in 2.5s ease;
-}
-
 @keyframes fade-in {
 
 	0% {
@@ -404,22 +387,17 @@ main {
 
 }
 
-@media ( min-width: 900px ) {
+@media ( min-width: 745px ) {
 
 	.hero {
-		background-image: url(images/hero.jpeg);
-		justify-content: center;
-		padding-left: 7rem;
-		text-align: left;
-
+		align-items: center;
+		display: flex;
 	}
 
-	.hero p {
-		padding: 0;
-	}
-
-	.hero .button {
-		margin: var(--margin-standard) 0;
+	.hero img {
+		margin-left: 4rem;
+		max-height: 50%;
+		max-width: 50%;
 	}
 
 }
@@ -428,54 +406,15 @@ main {
 =================
 	ABOUT PAGE
 =================
-========================================================================*/
-
-.about-page {
-	align-items: flex-start;
-	display: flex;
-	flex-direction: column;
-}
-
-.about-page img {
-	border-radius: 3px;
-	height: auto;
-	margin: 0 auto;
-	max-width: 300px;
-}
-
-.about-page h1 {
-	margin-top: var(--margin-one-up);
-	}
-
-.about-page p {
-	margin-bottom: 3rem;
-}
+=======================================================================*/
 
 .about-page .button {
-	margin: 1rem 0;
+	margin: 0;
 }
 
-@media ( min-width: 950px ) {
-
-	.about-page {
-		align-items: center;
-		flex-direction: row;
-		margin: 0 auto;
-		padding: 5rem 0;
-	}
-
-	.about-page h1 {
-		margin-top: 0;
-	}
-
-	.about-page img {
-		margin-right: 4rem;
-		max-height: 50%;
-		max-width: 50%;
-	}
-
+.about-info {
+	margin-bottom: 3rem;
 }
-
 
 /*========================================================================
 =============
@@ -527,16 +466,16 @@ main {
 	padding-right: 1rem;
 }
 
-details {
+.resume-skills details {
 	border-bottom: 1px solid var(--color-gray-dark);
 	padding: .5rem;
 }
 
-summary {
+.resume-skills summary {
 	padding: .5rem;
 }
 
-summary:focus {
+.resume-skills summary:focus {
 	border-bottom: .5rem;
 	color: var(--color-accent);
 	outline: none;
@@ -746,6 +685,7 @@ label {
 footer {
 	background-color: #FAFAFA;
 	padding: 1rem 2rem;
+	margin-top: 8rem;
 	text-align: center;
 }
 
