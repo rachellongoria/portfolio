@@ -155,7 +155,6 @@ em {
 
 .portfolio-piece .primary-title h1 {
 	letter-spacing: .03em;
-	padding-right: 0;
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -163,34 +162,33 @@ em {
 .portfolio-piece .primary-title p {
 	color: var(--color-gray-medium);
 	font-size: var(--font-size-two-up);
-	margin: 0 0 5rem;
 	text-align: center;
 }
 
 .portfolio-piece h3 {
 	letter-spacing: .03em;
-	margin: var(--margin-two-up) 0 .5rem;
 	text-transform: uppercase;
 }
-
-.portfolio-piece h4 {
-	margin: var(--margin-two-up) 0 .5rem;
-}
-
-.portfolio-piece .secondary-title h4 {
-	margin-top: .5rem;
-}
-
-.portfolio-piece h4 {
-	margin: var(--margin-two-up) 0 .5rem;}
 
 .main-resume a {
 	text-transform: none;
 }
 
-.primary-title p {n9k
-	font-size: var(--font-size-one-up);
+.pdf {
+	text-decoration: underline;
+}
+
+.pdf a {
+	font-size: var(--font-size-one-down);
+}
+
+.primary-title p {
+	font-size: var(--font-size-two-up);
 	font-weight: 800;
+}
+
+.primary-title a {
+	text-decoration: underline;
 }
 
 .resume-contact a {
@@ -200,6 +198,10 @@ em {
 
 .resume-contact a:hover {
 	font-weight: 800;
+}
+
+.resume-skills summary:focus {
+	color: var(--color-accent);
 }
 
 figcaption {
@@ -215,6 +217,11 @@ figcaption a {
 .contact-grid a {
 	color: var(--color-accent);
 	text-transform: none;
+}
+
+.contact-grid a:hover {
+	color: var(--color-accent);
+	font-weight: 800;
 }
 
 .contact-grid h3 {
@@ -290,7 +297,7 @@ footer a {
 
 header {
 	background-color: var(--color-gray-light);
-	margin-bottom: 8rem;
+	margin-bottom: var(--margin-three-up);
 	padding: 2rem 2rem;
 }
 
@@ -338,6 +345,7 @@ body {
 html {
 
 --margin-standard-ratio: 2;
+	--margin-three-up: calc( var(--margin-two-up) * var(--margin-standard-ratio) );
 	--margin-two-up: calc( var(--margin-one-up) * var(--margin-standard-ratio) );
 	--margin-one-up: calc( var(--margin-standard) * var(--margin-standard-ratio) );
 	--margin-one-down: calc( var(--margin-standard) / var(--margin-standard-ratio) );
@@ -359,7 +367,7 @@ main {
 ========================================================================*/
 
 .hero {
-	margin-bottom: 8rem;
+	margin-bottom: var(--margin-three-up);
 }
 
 .hero h1, .hero img {
@@ -394,7 +402,7 @@ main {
 	}
 
 	.hero img {
-		margin-left: 4rem;
+		margin-left: var(--margin-two-up);
 		max-height: 50%;
 		max-width: 50%;
 	}
@@ -460,6 +468,10 @@ main {
 	margin: var(--margin-two-up) 0 0;
 }
 
+.pdf {
+	margin: 0;
+}
+
 .primary-title  h1 {
 	margin-bottom: 0;
 	padding-right: 1rem;
@@ -476,8 +488,11 @@ main {
 
 .resume-skills summary:focus {
 	border-bottom: .5rem;
-	color: var(--color-accent);
 	outline: none;
+}
+
+.resume-contact {
+	margin-top: var(--margin-two-up);
 }
 
 @media ( min-width: 650px ) {
@@ -503,6 +518,7 @@ main {
 	.resume-contact {
 		grid-column-start: 2;
 		grid-row-start: 1;
+		margin-top: 3rem;
 
 	}
 
@@ -530,13 +546,37 @@ main {
 ================
 ========================================================================*/
 
+.portfolio-piece .primary-title h1 {
+	padding-right: 0;
+}
+
+.portfolio-piece .primary-title p {
+	margin: 0 0 5rem;
+}
+
+.portfolio-piece h3 {
+	margin: var(--margin-two-up) 0 .5rem;
+}
+
+.portfolio-piece h4 {
+	margin: var(--margin-two-up) 0 .5rem;
+}
+
+.portfolio-piece .secondary-title h4 {
+	margin-top: .5rem;
+}
+
+.portfolio-piece h4 {
+	margin: var(--margin-two-up) 0 .5rem;
+}
+
 .portfolio-grid img {
 	border-radius: 3px;
 	max-width: 100%;
 }
 
 figure {
-	margin: 2rem 0;
+	margin: var(--margin-two-up) 0;
 }
 
 @media ( min-width: 600px) {
@@ -579,7 +619,7 @@ figure {
 }
 
 .portfolio-artifact2 img, .portfolio-artifact3 img {
-	margin: 1rem;
+	margin: var(--margin-standard);
 	max-height: auto;
 	max-width: 100%;
 }
@@ -624,7 +664,7 @@ figure {
 }
 
 .contact-gridcard {
-	margin-bottom: 1rem;
+	margin-bottom: var(--margin-standard);
 }
 
 input, select, textarea {
@@ -683,8 +723,8 @@ label {
 
 footer {
 	background-color: #FAFAFA;
-	padding: 1rem 2rem;
-	margin-top: 8rem;
+	padding: 1.5rem 3rem;
+	margin-top: var(--margin-three-up);
 	text-align: center;
 }
 
@@ -694,13 +734,17 @@ footer ul {
 }
 
 footer li {
-	margin: .5rem;
+	display: inline;
+	margin: var(--margin-one-down);
 }
 
 @media ( min-width: 700px ) {
 
 	footer {
-		padding: 2rem;
+		text-align: left;
+	}
+
+	footer nav {
 		text-align: left;
 	}
 	
@@ -709,7 +753,6 @@ footer li {
 	}
 
 	footer li {
-		display: inline;
 		margin: 0 var(--margin-standard) 0 0;
 
 	}
