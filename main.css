@@ -294,15 +294,15 @@ header {
 	padding: 2rem 2rem;
 }
 
-nav {
+.nav {
 	margin: 0 auto;
 }
 
-nav li {
+.nav li {
 	list-style-type: none;
 }
 
-nav ul {
+.nav ul {
 	display: block;
 	margin-top: 2rem;
 	padding-left: 0;
@@ -314,13 +314,13 @@ nav ul {
 		padding-left: 1rem;
 	}
 
-	nav {
+	.nav {
 		align-items: center;
 		display: flex;
 		justify-content: space-between;
 	}
 
-	nav li {
+	.nav li {
 		display: inline;
 		padding: 1rem;
 	}
@@ -570,7 +570,7 @@ figure {
 	display: block;
 	margin: 0 auto;
 	max-height: auto;
-	max-width: 100%;
+	max-width: 60%;
 }
 
 .portfolio-artifact2, .portfolio-artifact3 {
