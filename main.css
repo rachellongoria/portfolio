@@ -50,12 +50,12 @@ a {
 }
 
 a:hover {
-	color: var(--color-accent);
+	color: #5a4bc9;
 	cursor: pointer;
 }
 
 a:active {
-	color: var(--color-accent);
+	color: #5a4bc9;
 	font-weight: 800;
 }
 
@@ -97,11 +97,12 @@ nav {
 }
 
 h1 {
-	color: var(--color-accent);
+	color: black;
 	font-weight: 800;
 }
 
 h2 {
+	colors: var(--color-gray-dark);
 	font-weight: 400;
 }
 
