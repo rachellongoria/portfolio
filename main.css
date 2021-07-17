@@ -43,15 +43,16 @@ html {
 }
 
 a {
-	color: var(--color-gray-medium);
+	color: #5a4bc9;
 	letter-spacing: .03em;
 	text-decoration: none;
 	text-transform: uppercase;
 }
 
 a:hover {
-	color: #5a4bc9;
+	color: black;
 	cursor: pointer;
+	text-decoration: underline;
 }
 
 a:active {
@@ -139,13 +140,13 @@ em {
 }
 
 .hero h1 {
-	color: var(--color-gray-medium);
+	color: black;
 	letter-spacing: .04em;
 	text-align: center;
 }
 
 .about-page h2 {
-	color: var(--color-accent);
+	color: var(--color-gray-dark);
 	font-size: var(--font-size-five-up);
 	font-weight: 400;
 }
@@ -381,7 +382,7 @@ main {
 	margin-bottom: var(--margin-three-up);
 }
 
-.hero h1, .hero img {
+.hero h1, .hero h2 {
 	animation: fade-in 1s ease;
 	padding: 1rem 0;
 }
