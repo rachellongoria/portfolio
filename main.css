@@ -6,7 +6,7 @@
 
 html {
 
-	--color-gray-light: #fff;
+	--color-gray-light: #ededed;
 	--color-gray-medium: #888;
 	--color-gray-dark: #575757;
 	--color-accent: #a6462b;
@@ -80,7 +80,7 @@ nav a {
 }
 
 .nav-logo {
-	color: #5a4bc9);
+	color: #5a4bc9;
 	font-size: var(--font-size-five-up);
 }
 
@@ -298,7 +298,7 @@ footer a {
 ========================================================================*/
 
 header {
-	background-color: white;
+	background-color: var(--color-gray-light);
 	padding: 2rem 0;
 	position: fixed;
 	top: 0;
