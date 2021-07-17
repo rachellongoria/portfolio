@@ -89,7 +89,7 @@ nav a {
 }
 
 .current-link {
-	color: var(--color-accent);
+	color: #5a4bc9;
 	text-decoration: underline;
 }
 
@@ -112,7 +112,7 @@ h3 {
 }
 
 h4 {
-	color: var(--color-accent);	
+	color: #5a4bc9;	
 	font-size: var(--font-size-one-up);
 	font-weight: 800;
 }
@@ -125,7 +125,7 @@ h5 {
 }
 
 h6 {
-	color: var(--color-accent);
+	color: #5a4bc9;
 	font-size: var(--font-size-standard);
 	font-style: italic;	
 }
